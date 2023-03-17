@@ -1,0 +1,93 @@
+<form class="row d-flex justify-content-center align-items-center vh-100" [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()">
+    <div class="col-sm-6 border border-dark p-4">
+        <div class="row mb-2">
+            <div class=" col-sm-2 form-check">
+                <input class="form-check-input" type="radio" formControlName="radioCheck" value="admin">
+                <label class="form-check-label">
+                    HOD
+                </label>
+            </div>
+            <div class=" col-sm-2 form-check">
+                <input class="form-check-input" type="radio" formControlName="radioCheck" value="staff">
+                <label class="form-check-label">
+                    Staff
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label>Fist Name</label>
+                <input type="text" class="form-control" formControlName="firstName">
+                <small *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('firstName')?.errors?.['required']">Username is Required</span>
+                </small>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName">
+                <small *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('lastName')?.errors?.['required']">lastname is Required</span>
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <small *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('email')?.errors?.['required']">Email is Required</span>
+                </small>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label>Contact</label>
+                <input type="text" class="form-control" formControlName="Contact">
+                <small *ngIf="!signUpForm.get('Contact').valid && signUpForm.get('Contact').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('Contact')?.errors?.['required']">Contact is Required</span>
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label>Department</label>
+                <select class="form-control" formControlName="selectOption">
+                    <option value="sales1">sales1</option>
+                    <option value="sales2">sales2</option>
+                    <option value="sales3">sales3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label>Username</label>
+                <input type="email" class="form-control" formControlName="userName">
+                <small *ngIf="!signUpForm.get('userName').valid && signUpForm.get('userName').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('userName')?.errors?.['required']">Username is Required</span>
+                </small>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <small *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched"
+                    class="form-text text-danger">
+                    <span *ngIf="signUpForm.get('password')?.errors?.['required']">Password is Required</span>
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center mt-2">
+                <span>Already register?</span><a href="" routerLink="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</form>

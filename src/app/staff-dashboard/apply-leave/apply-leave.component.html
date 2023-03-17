@@ -1,0 +1,28 @@
+<form [formGroup]="staffLeaveDetails" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <label>From</label>
+            <input type="date" formControlName="startDate" name="startDate" class="form-control">
+        </div>
+        <div class="col-sm-6 form-group">
+            <label>To</label>
+            <input type="date" formControlName="endDate" name="endDate" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <label>Reason</label>
+            <textarea name="reasonText" formControlName="reasonText" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <label>Fullname</label>
+            <input type="text" formControlName="fullName" name="fullName" class="form-control">
+        </div>
+    </div>
+    <div class="float-right">
+        <button type="button" class="btn btn-secondary mr-3" mat-button mat-dialog-close>Cancel</button>
+        <button type="submit" class="btn btn-success" mat-button mat-dialog-close cdkFocusInitial>Submit</button>
+    </div>
+</form>

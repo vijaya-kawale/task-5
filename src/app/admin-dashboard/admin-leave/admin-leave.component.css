@@ -1,0 +1,12 @@
+.fade{
+    background-color: white;
+}
+/* .modal-backdrop.show{
+    opacity: -0.5 !important;
+} */
+.modal-backdrop{
+    background-color: #c45353 !important;
+}
+/* .modal-backdrop.fade{
+    opacity: -0.5 !important;
+} */

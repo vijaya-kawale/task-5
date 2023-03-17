@@ -1,0 +1,25 @@
+<!-- <div class="d-flex align-items-center justify-content-center vh-100 d-none">
+    <h5 class="text-danger d-none">No Leave request available</h5>
+</div> -->
+
+<div class="row mt-4">
+    <div class="col-sm-3" *ngFor="let adminServe of leaveService">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><b>{{adminServe.fullName}}</b></h4>
+                <p class="card-text">Leave for {{adminServe.startDate | date : 'MMMM d, y'}} to {{adminServe.endDate |
+                    date : 'MMMM d, y'}}</p>
+                <h4 class="card-title"><b>Reason</b></h4>
+                <p class="card-text">{{adminServe.reason}}</p>
+                <h4 class="text-success" *ngIf="adminServe.status === 'Approved'"><span><i
+                            class="fa fa-check fa-2x"></i></span>{{adminServe.status}}</h4>
+                <h4 class="text-danger" *ngIf="adminServe.status === 'Rejected'"><span><i
+                            class="fa fa-check fa-2x"></i></span>{{adminServe.status}}</h4>
+                <button class="btn btn-success mr-3" *ngIf="adminServe.status === 'Pending'"
+                    (click)="leaveAprrove(adminServe.id)">Approve</button>
+                <button class="btn btn-danger px-3" *ngIf="adminServe.status === 'Pending'"
+                    (click)="leaveReject(adminServe.id)">Reject</button>
+            </div>
+        </div>
+    </div>
+</div>

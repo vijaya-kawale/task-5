@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1 mt-5 text-center">
+            <h2><b>{{totalLeaves}}</b></h2>
+            <span><b>Total Leaves</b></span>
+        </div>
+        <div class="col-sm-1 mt-5 text-center">
+            <h2><b>{{approvedLeave}}</b></h2>
+            <span><b>Approved</b></span>
+        </div>
+        <div class="col-sm-1 mt-5 text-center">
+            <h2><b>{{rejectedLeave}}</b></h2>
+            <span><b>Rejected</b></span>
+        </div>
+        <div class="col-sm-1 mt-5 text-center">
+            <h2><b>{{pendingLeave}}</b></h2>
+            <span><b>Pending</b></span>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-3" *ngFor="let leaveServ of LeaveService">
+            <div class="card">
+                <div class="card-body">
+                    <p>Leave for {{leaveServ.startDate | date : 'MMMM d, y'}} To {{leaveServ.endDate | date : 'MMMM d, y'}}
+                    </p>
+                    <!-- <p>No of days:{{(leaveServ.startDate - leaveServ.endDate) / 86400000}}</p> -->
+                    <h3><b>Reason</b></h3>
+                    <p>{{leaveServ.reason}}</p>
+                    <h3><b>Status</b></h3>
+                    <p>{{leaveServ.status}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
